@@ -1,0 +1,101 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static  'bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static  'newstyle.css' %}">
+	<script src="https://kit.fontawesome.com/693b04a3aa.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Rubik:500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<nav class=" navbar navbar-inverse navbar-fixed-top">
+		<div class="container">	
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target = "#collapsing-nav-material"
+				area-expanded = "false">
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div class="navbar-brand">
+					MyDiary 
+					<i class="far fa-bookmark"></i> 	
+				</div>
+			</div>
+			<div class="collapse navbar-collapse" id="collapsing-nav-material">
+				{% if user.is_authenticated %}
+				<form class="" action = " {% url 'articles:create' %}" method = "GET">
+					{% csrf_token %}
+					<div class=" nav navbar-nav">
+						<li>
+							<button type="submit" class="btn btn-default navbar-btn">Create Article</button>	
+						</li>	
+					</div>		
+				</form>
+				<form class="" action = " {% url 'articles:list' %}" method = "GET">
+					{% csrf_token %}
+					<div class=" nav navbar-nav">
+						<li>
+							<button type="submit" class="btn btn-default navbar-btn">Article list</button>	
+						</li>	
+					</div>		
+				</form>
+				<form class="" action = " {% url 'accounts:logout' %}" method= "POST">
+					{% csrf_token %}
+					<div class="nav navbar-nav navbar-right">
+						<li>
+							<button type="submit" class=" btn btn-default navbar-btn	 "> logout</button>	
+						</li>		
+					</div>
+				</form>
+			{% else %}
+				<form class="" action = " {% url 'accounts:login' %}" method= "POST">
+					{% csrf_token %}
+					<div class="nav navbar-nav navbar-right">
+						<li>
+							<button type="submit" class="btn btn-default navbar-btn" formmethod="get"> login</button>	
+						</li>		
+					</div>
+				</form>
+				<form class="" action = " {% url 'accounts:signup' %}" method= "POST">
+					{% csrf_token %}
+					<div class="nav navbar-nav navbar-right">
+						<li>
+							<button type="submit" class="btn btn-default navbar-btn" formmethod="get"> Sign up</button>	
+						</li>		
+					</div>
+				</form>
+
+			{% endif %}
+			</div>
+				
+		</div>
+	</nav>
+	<div class="top_wrapper row ">
+		<div class=" wrapper_heading">
+			<h1>
+				My Diary
+			</h1>
+			<div class="wrapper_detail">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</div>
+		</div>
+	</div>
+	<div class="footer row">
+		<div class="footer_content"> 
+			Made by BlueTwig
+		</div>
+		
+	</div>
+	<script	src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

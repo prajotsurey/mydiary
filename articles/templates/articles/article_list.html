@@ -1,0 +1,22 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}	
+	<div class="container main_container">
+		<div class="articles">
+			<div class="row ">
+				{% for article in articles %}
+				{% if article.author == request.user %}
+			<div class="col-sm-12 article" >
+				<h2>
+					<a href= "{% url 'articles:detail' slug=article.slug %} ">{{article.title}}</a>
+				</h2>	
+					<p class="info">{{article.snippet}}</p>
+					<p>{{article.date}}</p>
+			</div>
+			{% endif %}
+			{% endfor %}
+
+			</div>	
+		</div>	
+	</div>	
+{% endblock %}

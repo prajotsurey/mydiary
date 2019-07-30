@@ -1,0 +1,124 @@
+body{
+	overflow-x: hidden;
+}
+.article{
+	background: rgb(225,225,225,0.7);
+	margin:20px 0px 20px 0px;
+}
+.main_container{
+	background: url("article_list_background.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+}
+.articles{
+	max-width: 660px;
+	margin:0px auto;
+	text-align: center;
+}
+.article>h2>a{
+	font-size: 1.6em;
+	font-family: 'Satisfy', cursive;
+}
+.info{
+	font-size: 1.2em;
+	font-family: 'Roboto' , sans-serif;
+}
+img{
+	max-width: 100%;
+}
+.login_form{
+	padding-top:100px;
+}
+
+.btn-default{
+	background: none;
+	color:white;
+	border:none;
+	border-radius:0;
+}
+.btn-default:hover{
+	background:none;
+	color:grey;
+}
+
+.jumbotron{
+	background-image: url("jumbotron_background.jpg");
+	background-size: cover;
+}
+.top_wrapper{
+	background-image: url("wrapper_background.jpg");
+	background-size: cover;
+}
+
+.wrapper_heading{
+	max-width: 700px;
+	margin: 140px auto 160px auto;
+}
+
+.wrapper_heading>h1{
+	text-align: center; 
+	padding: 70px 0px 70px 0px;
+	font-size: 6em;
+	font-family: 'Pacifico', cursive;
+	color: #F2DC99;
+}
+.wrapper_detail{
+	font-size: 1.3em;
+	font-family: 'Rubik', sans-serif;
+	color: #BFAB9F;
+}
+.footer{
+	background-color: #4A8C80;
+	padding: 20px;
+}
+.footer_content{
+	text-align: center;
+	margin:10px auto;
+}
+label{
+	display: block;
+	text-align: center;
+}
+.accounts_button{
+	color: black;
+	display: block;
+	text-align: center;
+	margin: 0px;
+}
+.login_form{
+	max-width: 180px;
+	margin: auto auto;
+}
+
+input{
+
+}
+
+@media only screen and (max-width: 767px) {
+	.btn-default{
+		border:none;
+		margin:0px;
+	}
+	.nav>li{
+		margin: 0px 10px 0px 30px;
+		border-bottom: 1px solid grey;
+
+	}
+	.nav>li>button{
+		padding: 10px 0px 10px 0px;
+	}
+	.top_wrapper{
+		max-height: 400px;
+	}
+	.wrapper_heading{
+		margin:50px 150px;
+	}
+	.wrapper_detail{
+		font-size: 0.9em;
+		background: rgba(0, 0, 0, 0.5);
+		padding: 5px;
+	}
+	.top_wrapper{
+		max-height: 100%;
+	}	
+}
