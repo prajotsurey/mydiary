@@ -1,19 +1,59 @@
 body{
 	overflow-x: hidden;
 }
-.article{
-	background: rgb(225,225,225,0.7);
-	margin:20px 0px 20px 0px;
-}
-.main_container{
-	background: url("article_list_background.jpg");
-	background-size: cover;
-	background-attachment: fixed;
-}
 .articles{
-	max-width: 660px;
-	margin:0px auto;
-	text-align: center;
+}
+.article{
+	padding:20px;
+}
+.article-detail{
+	max-width: 760px;
+	margin:auto;
+}
+.article-detail-body{
+	padding: 10px 20px;
+	background: #cdd7e3;
+	border:1px grey;
+	border-radius: 5px;
+}
+.article-body{
+	border:1px solid grey;
+	border-radius: 5px;
+	padding:20px;
+	height: 500px;
+}
+.article-body>h2{
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+}
+.article-body>p.info{
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-weight: bold;
+}
+.article-body>p.date{
+	font-family: 'IBM Plex Sans' sans-serif;
+	font-weight: bold;
+}
+p.detail-date{
+	font-family: 'IBM Plex Sans' sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;	
+}
+div.article-detail-body{
+	font-family: 'IBM Plex Sans' sans-serif;
+	font-weight: normal;
+	font-size: 1.2em;
+
+}
+.article-thumb{
+	width: 100%;
+	height: 60%;
+}
+.article-thumb>a>img{
+	width:100%;
+	height: 100%;
+	object-fit: cover;
 }
 .article>h2>a{
 	font-size: 1.6em;
@@ -26,41 +66,59 @@ body{
 img{
 	max-width: 100%;
 }
-.login_form{
-	padding-top:100px;
-}
-
 .btn-default{
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-weight: bold;
 	background: none;
 	color:white;
 	border:none;
 	border-radius:0;
+
 }
 .btn-default:hover{
 	background:none;
 	color:grey;
 }
-
+.btn-default:focus{
+	background: none;
+	color:white;
+	border:none;
+	border-radius:0;
+}
 .jumbotron{
 	background-image: url("jumbotron_background.jpg");
 	background-size: cover;
 }
-.top_wrapper{
-	background-image: url("wrapper_background.jpg");
-	background-size: cover;
+.outer {
+	background-image:url("wrapper_background.jpg");
+	background-size: cover; 
+	background-position: center;
+  	display: table;
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	height: 100%;
+  	width: 100%;
 }
 
-.wrapper_heading{
-	max-width: 700px;
-	margin: 140px auto 160px auto;
+.middle {
+  	display: table-cell;
+  	vertical-align: middle;
 }
 
-.wrapper_heading>h1{
+.middle>h1{
 	text-align: center; 
-	padding: 70px 0px 70px 0px;
+	padding: 70px 0px 10px 0px;
 	font-size: 6em;
 	font-family: 'Pacifico', cursive;
-	color: #F2DC99;
+	color: black;
+}
+.middle>h2{
+	text-align: center; 
+	padding: 0px 0px 0px 0px;
+	font-size: 2em;
+	font-family: 'IBM Plex Sans', sans-serif;
+	color: black;	
 }
 .wrapper_detail{
 	font-size: 1.3em;
@@ -76,25 +134,108 @@ img{
 	margin:10px auto;
 }
 label{
+	font-family: 'IBM Plex Sans', sans-serif;
 	display: block;
-	text-align: center;
 }
 .accounts_button{
-	color: black;
+	font-family: 'IBM Plex Sans', sans-serif;
+	color: white;
+	font-weight: bold;
 	display: block;
 	text-align: center;
 	margin: 0px;
+	background-color:#8C7561;
 }
-.login_form{
-	max-width: 180px;
-	margin: auto auto;
+.ac-form-div, .login-form-div , .form-div{
+	max-width: 600px;
+	margin:auto;
+	border:1px #CAC7D9 solid;
+	border-radius: 4px;
+}
+.login-form-div{
+	max-width: 300px;
+	padding:10px 0 10px 0;
+}
+nav>div.container{
+	padding:7px 0px 7px 0px;
+}
+.container>h1{
+	max-width: 600px;
+	margin: 10px auto;
+	font-family: 'IBM Plex Sans', sans-serif;
+}
+.container>h1.login-header{
+	max-width: 300px;
+	margin:10px auto;
+}
+.container>h1.article-list, .container>div>h1.article-list{
+	margin:10px auto;
+	max-width: 100%;
+	font-family: 'IBM Plex Sans', sans-serif;
+}
+.ac-form, .login-form, .signup-form{
+	padding:10px;
+}
+.ac-form>input, .login-form>input , .signup-form>input{
+	padding:5px;
+	width:100%;
+	min-width: 250px;
+	margin:5px 0 10px 0;
+}
+.ac-form>textarea{
+	padding:5px;
+	width:100%;
+	min-width: 250px;
+	margin:5px 0 10px 0;
+}
+#id_image{
+}
+#id_title{
+	font-weight: bold;
 }
 
+.signup-form>label{
+	margin: 10px 0px 0px 0px;
+}
+.helptext{
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-weight: bold;
+	padding:5px 5px 5px 20px;
+	margin-bottom: 20px;
+}
+.errorlist{
+	margin:5px 0 10px 0;
+	padding:5px 5px 5px 5px;
+	border:1px red solid;
+	text-decoration: none;
+	color: red;
+}
+.errorlist>li{
+	list-style: none;
+}
+ul{
+	padding-inline-start: 0px;
+	margin-block-end:0px;
+}
+.helptext>ul{
+	padding-inline-start:0px;
+}
+.helptext>ul>li{
+	padding:0px 5px 0px 20px;
+	text-decoration: none;
+	list-style: none;
+}
+.button-div{
+	margin:10px 0px 5px 0px;
+}
 input{
 
 }
 
 @media only screen and (max-width: 767px) {
+	nav>div.container{
+		padding: 7px 7px 7px 7px;
+	}
 	.btn-default{
 		border:none;
 		margin:0px;
@@ -121,4 +262,7 @@ input{
 	.top_wrapper{
 		max-height: 100%;
 	}	
+	.articles{
+		padding: 20px;
+	}
 }

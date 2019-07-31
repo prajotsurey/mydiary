@@ -1,13 +1,18 @@
 {% extends 'base_layout.html' %}
 {% block content %}
 <div class="container">
-	<form class="site-form" action="{% url 'accounts:signup' %}" method="POST" >
-	{% csrf_token %}
-	{{form}}
-	<div>
-		<input type="submit" value="signup">	
+	<h1 class="signup-header">Signup</h1>
+	<div class="form-div">
+		<form class="signup-form" action="{% url 'accounts:signup' %}" method="POST" >
+		{% csrf_token %}
+		{{form}}
+		<div class="button-div">
+			<input class="btn accounts_button" type="submit" value="Sign up">	
+		</form>
+		</div>
+		
 	</div>
-	</form>	
+		
 </div>
 
 {% endblock %}

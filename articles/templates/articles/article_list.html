@@ -1,20 +1,29 @@
 {% extends 'base_layout.html' %}
 
 {% block content %}	
-	<div class="container main_container">
+	<div class="container">
+		<h1 class="article-list">Your Articles</h1>
 		<div class="articles">
 			<div class="row ">
 				{% for article in articles %}
 				{% if article.author == request.user %}
-			<div class="col-sm-12 article" >
-				<h2>
-					<a href= "{% url 'articles:detail' slug=article.slug %} ">{{article.title}}</a>
-				</h2>	
-					<p class="info">{{article.snippet}}</p>
-					<p>{{article.date}}</p>
-			</div>
-			{% endif %}
-			{% endfor %}
+				<div class="col-sm-4 article">
+					<div class="article-body">
+							
+							<p class="article-thumb">
+								<a href= "{% url 'articles:detail' slug=article.slug %} ">
+							<img src="{{article.image.url}}">	</a>
+							</p>
+							<h2>
+							{{article.title}}
+							</h2>
+							<p class="info">{{article.snippet}}</p>
+							<p class="date">{{article.date}}</p>
+					</div>
+					
+				</div>
+				{% endif %}
+				{% endfor %}
 
 			</div>	
 		</div>	

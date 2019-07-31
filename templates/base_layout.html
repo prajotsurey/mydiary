@@ -3,15 +3,16 @@
 <html>
 <head>
 	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="{% static  'bootstrap.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static  'newstyle.css' %}">
 	<script src="https://kit.fontawesome.com/693b04a3aa.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:700i&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100&display=swap" rel="stylesheet">
 </head>
 <body>
 	<nav class=" navbar navbar-inverse navbar-fixed-top">
-		<div class="container">	
+		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target = "#collapsing-nav-material"
 				area-expanded = "false">
@@ -26,6 +27,15 @@
 				</div>
 			</div>
 			<div class="collapse navbar-collapse" id="collapsing-nav-material">
+				<form class="" action = " {% url 'home' %}" method = "GET">
+					{% csrf_token %}
+					<div class=" nav navbar-nav">
+						<li>
+							<button type="submit" class="btn btn-default navbar-btn">Home</button>	
+						</li>	
+					</div>		
+				</form>
+
 				{% if user.is_authenticated %}
 				<form class="" action = " {% url 'articles:create' %}" method = "GET">
 					{% csrf_token %}
@@ -47,27 +57,28 @@
 					{% csrf_token %}
 					<div class="nav navbar-nav navbar-right">
 						<li>
-							<button type="submit" class=" btn btn-default navbar-btn	 "> logout</button>	
+							<button type="submit" class=" btn btn-default navbar-btn	 "> Logout</button>	
 						</li>		
 					</div>
 				</form>
 			{% else %}
-				<form class="" action = " {% url 'accounts:login' %}" method= "POST">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<form class="" action = " {% url 'accounts:login' %}" method= "POST">
 					{% csrf_token %}
-					<div class="nav navbar-nav navbar-right">
-						<li>
-							<button type="submit" class="btn btn-default navbar-btn" formmethod="get"> login</button>	
-						</li>		
-					</div>
+							<button type="submit" class="btn btn-default navbar-btn" formmethod="get"> Login</button>	
 				</form>
-				<form class="" action = " {% url 'accounts:signup' %}" method= "POST">
+				</li>
+				<li>
+					<form class="" action = " {% url 'accounts:signup' %}" method= "POST">
 					{% csrf_token %}
-					<div class="nav navbar-nav navbar-right">
-						<li>
 							<button type="submit" class="btn btn-default navbar-btn" formmethod="get"> Sign up</button>	
-						</li>		
-					</div>
 				</form>
+				</li>
+				
+							
+			</ul>
+				
 
 			{% endif %}
 			</div>
